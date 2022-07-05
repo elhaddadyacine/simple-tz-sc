@@ -6,6 +6,7 @@
   "private": true,
   "dependencies": {
     "@taquito/rpc": "^13.0.0",
+    "@taquito/signer": "^13.0.0",
     "@taquito/taquito": "^13.0.0"
   },
   "devDependencies": {
