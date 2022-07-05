@@ -1,18 +1,20 @@
 {
   "scripts": {
-    "dev": "webpack --mode development",
+    "dev": "webpack serve",
     "build": "webpack --mode production"
   },
   "private": true,
   "dependencies": {
     "@taquito/rpc": "^13.0.0",
-    "@taquito/taquito": "^13.0.0",
-    "stream": "^0.0.2"
+    "@taquito/taquito": "^13.0.0"
   },
   "devDependencies": {
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
     "ts-loader": "^9.3.1",
     "typescript": "^4.7.4",
     "webpack": "^5.73.0",
-    "webpack-cli": "^4.10.0"
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3"
   }
 }

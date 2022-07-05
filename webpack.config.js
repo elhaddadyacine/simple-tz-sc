@@ -1,25 +1,36 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-  entry: './src/script.ts',
-  devtool: 'inline-source-map',
+  mode: "development",
+  entry: "./src/script.ts",
+  devtool: "inline-source-map",
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      },
-    ],
+        use: "ts-loader",
+        exclude: /node_modules/
+      }
+    ]
+  },
+  devServer: {
+    liveReload: true,
+    hot: true,
+    host: "localhost",
+    port: 8080
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: [".tsx", ".ts", ".js"],
+    fallback: {
+      stream: require.resolve("stream-browserify"),
+      http: require.resolve("stream-http")
+    }
   },
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist")
   },
-  experiments:{
+  experiments: {
     topLevelAwait: true
   }
 };
